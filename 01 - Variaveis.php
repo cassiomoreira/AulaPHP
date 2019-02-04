@@ -82,4 +82,17 @@ echo "<br><br>Pegar o nome do script<br>";
 $nomeScript = $_SERVER["SCRIPT_NAME"];
 echo $nomeScript;
 
+//////////////////////////////////////////////////////////////
+
+$nomeTeste = "T3ST3";
+$nomeTestando = "T3ST@nd0";
+
+function teste(){
+	global $nomeTeste;
+	echo "<br><br>(Variável fora da função)Testando uma variável fora da função: ".$nomeTeste."<br>";
+	echo "Mais uma vez, agora na linha 93, mas sem o global: ".$nomeTestando."<br>";
+}
+
+teste();
+
 ?>
