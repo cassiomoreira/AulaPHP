@@ -49,4 +49,22 @@ $json = '[{"nome":"Jo\u00e3o","idade":20},{"nome":"Luiz","idade":25}]';
 $data = json_decode($json, true);
 var_dump($data);
 
+////////////////////////////////////////////////////////////
+echo "<br><br>";
+
+define("SERVIDOR","127.0.0.1");
+echo SERVIDOR;
+
+///////////////////////////////////////////////////////
+define("Bando_De_Dados",[
+'127.0.0.1','root','password', 'test']);
+
+echo "<br><br>";
+print_r(Bando_De_Dados);
+
+///////////////////////////////////////////////////////
+
+echo "<br><br>";
+echo PHP_VERSION;
+
 ?>
