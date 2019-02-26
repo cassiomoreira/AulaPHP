@@ -138,12 +138,79 @@ var_dump($cpf->getNumero());
 echo "<br>";
 var_dump(Documento::validarCPF("87867147241"));
 
+ echo "<br><br>";
+//////////////////////////////////////////////////////////////
+//METODO CONSTRUTOR
 
+class Endereco{
 
+	private $logradouro;
+	private $numero;
+	private $cidade;
 
+	public function __construct($a, $b, $c){
+		$this->logradouro = $a;
+		$this->numero = $b;
+		$this->cidade = $c;
+	}
 
+	//public function __destruct(){
+	//	var_dump("DESTRUIR");
+	//}
 
+	public function __toString(){
+		return $this->logradouro.", ".$this->numero." - ".$this->cidade;
+	}
+}
 
+$meuEndereco = new Endereco("Rua Ademar Saraiva Leão", "123", "Santos");
+
+//var_dump($meuEndereco);
+//unset($meuEndereco);
+
+//ou
+
+echo $meuEndereco;
+
+/////////////////////////////////////////////////////////////////
+// EMCAPSULAMENTO
+echo "<br><br>";
+class Pessoas{
+	public $nome = "Rasmus Lerdorf";
+	protected $idade = 48;
+	private $senha = "123456";
+	private $tipo = "ativo";
+
+	public function verDados(){
+		echo $this->nome."<br>";
+		echo $this->idade."<br>";
+		echo $this->senha."<br>";
+	}
+}
+
+$objeto = new Pessoas();
+
+echo $objeto->nome."<br><br>";
+//echo $objeto->idade."<br><br>"; -Não é possível pq é protected
+
+$objeto->verDados();
+
+echo "<br><br>Extends<br>";
+
+ class Programador extends Pessoas{
+	//Como $tipo é privado não é possivle acessar de fora da class
+	//public function verDados(){
+ 	//	echo $this->tipo."<br>";
+ 	//}
+ }
+
+$progra = new Programador();
+
+$progra->verDados();
+
+echo "<br><br>Herança<br>";
+/////////////////////////////////////////////////////////////////
+// HERANÇA
 
 
 
